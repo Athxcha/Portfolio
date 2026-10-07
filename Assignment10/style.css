@@ -1,0 +1,84 @@
+body {
+    font:14px arial;
+    color: #222;
+    text-align:center;
+    padding:35px; }
+  
+form, p, span {
+    margin:0;
+    padding:0; 
+    font:14px arial;
+}
+  
+input, select { 
+	font:14px arial; 
+}
+  
+#wrapper {
+    margin:0 auto;
+    padding-bottom:25px;
+    background:#EBF4FB;
+    width:504px;
+    border:1px solid #ACD8F0; }
+
+#loginform {
+ 	margin: 20px auto;
+ 	padding-top: 18px;
+ 	padding-bottom: 20px;
+    background:#EBF4FB;
+    width:504px;
+    border:1px solid #ACD8F0; 
+}
+
+#statusinfo {
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: #444;
+}
+
+#statusinfo #connection {
+    color: #2e7d32;
+    font-weight: bold;
+}
+
+#statusinfo #your_id {
+    color: #1565c0;
+    font-weight: bold;
+}
+
+#loginfields {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+#roomSelect {
+    border: 1px solid #ACD8F0;
+    padding: 2px 4px;
+    border-radius: 3px;
+    background: #fff;
+}
+  
+#chatbox {
+    text-align:left;
+    margin:0 auto;
+    margin-bottom:25px;
+    padding:10px;
+    background:#fff;
+    height:270px;
+    width:430px;
+    border:1px solid #ACD8F0;
+    overflow:auto; 
+}
+#usermsg {
+    width:395px;
+    border:1px solid #ACD8F0; }
+  
+#submit { width: 60px; }
+  
+#menu { padding:12.5px 25px 12.5px 25px; }
+  
+.welcome { display: inline; }
+  
+.message { margin:0 0 2px 0; }

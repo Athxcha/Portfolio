@@ -1,0 +1,47 @@
+[
+  {
+    "pic": "pic/top1.jpg",
+    "brand": "A.K.O.O Clothing",
+    "price": "200 Baht"
+  },
+  {
+    "pic": "pic/top2.jpg",
+    "brand": "Abercrombie & Fitch",
+    "price": "300 Baht"
+  },
+  {
+    "pic": "pic/top3.jpg",
+    "brand": "Gap Inc",
+    "price": "400 Baht"
+  },
+  {
+    "pic": "pic/top4.jpg",
+    "brand": "Brand 4",
+    "price": "250 Baht"
+  },
+  {
+    "pic": "pic/top5.jpg",
+    "brand": "Brand 5",
+    "price": "350 Baht"
+  },
+  {
+    "pic": "pic/top6.jpg",
+    "brand": "Brand 6",
+    "price": "450 Baht"
+  },
+  {
+    "pic": "pic/top7.jpg",
+    "brand": "Brand 7",
+    "price": "500 Baht"
+  },
+  {
+    "pic": "pic/top8.jpg",
+    "brand": "Brand 8",
+    "price": "550 Baht"
+  },
+  {
+    "pic": "pic/top9.jpg",
+    "brand": "Brand 9",
+    "price": "600 Baht"
+  }
+]

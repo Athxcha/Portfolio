@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Register</title>
+		<script type="text/javascript" src="register.js"></script>
+	</head>
+	<body>
+		<form name="myRegister" id="myRegister" action="login.html">
+			<fieldset>
+				<legend>Register</legend>
+				<span>* require</span> <br>
+				<span id="errormsg"></span> <br>
+				First name*: 
+				<input type="text" name="firstname" required>
+				Last name*: 
+				<input type="text" name="lastname" >
+				<br>
+				Gender*: 
+				<input type="radio" name="gender" value="male" >Male
+				<input type="radio" name="gender" value="female" >Female
+				<input type="radio" name="gender" value="other" >Other
+				<br>
+				Birthday*: 
+				<input type="date" name="bday" value="" >
+				<br>
+				Email address*: 
+				<input type="email" name="email" >
+				<br>
+				Username*: 
+				<input type="text" name="username" >
+				<br>
+				Password*: 
+				<input type="password" name="password" required>
+				<br>
+				Retype Password*: 
+				<input type="password" name="password" required>
+				<br>
+				<input type="submit" value="Register" id="registerBtn">
+				<input type="reset" value="Reset" id="resetBtn">
+			</fieldset>
+		</form>
+
+		
+	</body>
+</html>

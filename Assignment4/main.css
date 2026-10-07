@@ -1,0 +1,503 @@
+/* ==========================================================================
+   IMPORTS & GENERAL PAGE STYLES (Week 3 & Week 4)
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #721e1e 0%, #982a2a 50%, #f63b3b 100%);
+    font-family: 'Outfit', 'Poppins', sans-serif;
+    color: #2d3748;
+    margin: 0;
+    padding: 30px 15px;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   CSS GRID CONTAINER & LAYOUT (Week 4 Slides)
+   ========================================================================== */
+.grid-container {
+    display: grid;
+    grid-template-columns: 14% auto 22%;
+    gap: 18px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Grid Cards (Glassmorphism & Elevation from Week 3) */
+.grid-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* ==========================================================================
+   GRID ITEM PLACEMENT (Slide 18 - 20)
+   ========================================================================== */
+#header {
+    grid-column: 1 / span 6;
+    text-align: center;
+    padding: 20px;
+}
+
+#menu {
+    grid-column: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+}
+
+#main {
+    grid-column: 3 / span 3;
+    text-align: center;
+}
+
+#right {
+    grid-column: 6 / span 1;
+    text-align: center;
+}
+
+#footer {
+    grid-column: 1 / span 6;
+    text-align: center;
+}
+
+/* ==========================================================================
+   1. HEADER SECTION
+   ========================================================================== */
+.logo-img {
+    width: 320px;
+    max-width: 90%;
+    height: auto;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.content-section {
+    scroll-margin-top: 30px;
+}
+
+/* ==========================================================================
+   2. MENU NAVIGATION (Sidebar)
+   ========================================================================== */
+.menu-item {
+    background-color: #ffffff;
+    color: #4a5568;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-item:hover {
+    background-color: #2b6cb0;
+    color: #ffffff;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.25);
+    border-color: #2b6cb0;
+}
+
+.menu-item.active {
+    background-color: #ebf8ff;
+    color: #2b6cb0;
+    border-color: #3182ce;
+    border-left: 5px solid #3182ce;
+}
+
+/* ==========================================================================
+   3. MAIN CONTENT (Pikachu, Info, Stats & Tables)
+   ========================================================================== */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    background-color: #ffebeb;
+    color: #b02b2b;
+    font-size: 32px;
+    font-weight: 700;
+    text-align: center;
+    border-radius: 16px;
+    max-width: 600px;
+    margin: 15px auto 20px auto;
+    padding: 12px 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+}
+
+h1 span {
+    font-size: 20px;
+    color: #718096;
+    font-weight: 400;
+}
+
+#pokemon_pic {
+    width: 200px;
+    max-width: 70%;
+    height: auto;
+    border: 5px dotted #ce3131;
+    border-radius: 50%;
+    background-color: #ffffff;
+    padding: 8px;
+    vertical-align: middle;
+    box-shadow: 0 6px 16px rgba(49, 130, 206, 0.15);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+#pokemon_pic:hover {
+    transform: scale(1.08) rotate(3deg);
+    filter: drop-shadow(0 8px 18px rgba(49, 130, 206, 0.35));
+}
+
+hr {
+    height: 6px;
+    color: #cbd5e0;
+    background: linear-gradient(90deg, transparent, #ce3131, transparent);
+    border: none;
+    border-radius: 3px;
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+/* Quick Stats List */
+.left_page {
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+ul {
+    font-family: Garamond, "Times New Roman", serif; 
+    font-size: 19pt;
+    font-weight: bold;
+    font-style: italic;
+    background-color: #fffaf0;
+    border-left: 5px solid #dd6b20;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    margin: 20px auto;
+    padding: 18px 36px;
+}
+
+ul li {
+    margin-bottom: 8px;
+    color: #5a3e2b;
+}
+
+/* Base Stats Mini Table */
+.table_stat {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 240px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    border: 1px solid #e2e8f0;
+}
+
+.table_stat th, .table_stat td {
+    padding: 8px 16px;
+    text-align: center;
+}
+
+.table_stat th {
+    background-color: #319795;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.table_stat td {
+    border-bottom: 1px solid #edf2f7;
+    color: #4a5568;
+    font-weight: 500;
+}
+
+/* Friends Section */
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #822c2c;
+    background-color: #ffebeb;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 12px;
+    max-width: 500px;
+    margin: 35px auto 20px auto;
+    padding: 10px 20px;
+    border-bottom: 3px solid #851a1a;
+}
+
+.flex_container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto;
+}
+
+.friend-card {
+    background-color: #ffffff;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    width: 140px;
+    padding: 12px 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.friend-card:hover {
+    transform: translateY(-5px);
+    border-color: #3182ce;
+    box-shadow: 0 8px 20px rgba(49, 130, 206, 0.18);
+}
+
+.friend-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+.friend-card:hover img {
+    transform: scale(1.12);
+}
+
+.pokemon-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4a5568;
+    margin-top: 6px;
+}
+
+/* CP Values Table */
+.table_Border {
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 550px;
+    margin: 25px auto;
+    background-color: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #f0e2e2;
+}
+
+.table_Border th, .table_Border td {
+    padding: 12px 20px;
+    text-align: center;
+}
+
+.table_Border th {
+    background-color: #b02b2b;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+.table_Border td {
+    border-bottom: 1px solid #f7eded;
+    color: #684a4a;
+    font-size: 14px;
+}
+
+.table_Border tr:nth-child(even) td {
+    background-color: #fcf7f7;
+}
+
+.table_Border tr:hover td {
+    background-color: #ebf8ff;
+    color: #b02b2b;
+}
+
+/* ==========================================================================
+   4. RIGHT SIDEBAR (Newsletter, Ads & Pokéball)
+   ========================================================================== */
+.sidebar-header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 15px;
+    background-color: #f34c4c;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.ad-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.ad-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.ad-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Rotating Pokéball Animation */
+.rotate-ball-container {
+    margin-top: 20px;
+}
+
+.rotate-ball {
+    width: 75px;
+    height: 75px;
+    animation: rotateBall 6s linear infinite;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+@keyframes rotateBall {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ==========================================================================
+   5. FOOTER & LINK STYLES
+   ========================================================================== */
+#footer div {
+    font-size: 15px;
+    color: #684a4a;
+    line-height: 2.2;
+}
+
+div a {
+    font-size: 15px;
+    font-weight: 600;
+    color: #b02b2b;
+    background-color: #ffebeb;
+    padding: 6px 16px;
+    border-radius: 16px;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s ease;
+}
+
+div a:hover {
+    background-color: #b02b2b;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(43, 108, 176, 0.25);
+}
+
+div a:active {
+    transform: translateY(1px) scale(0.97);
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES (Week 4 Slides 21 - 23, 26)
+   ========================================================================== */
+
+/* Tablet View (2 Columns) - max-width: 768px */
+@media only screen and (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: auto 28%;
+        gap: 14px;
+        padding: 0 10px;
+    }
+
+    #header {
+        grid-column: 1 / span 2;
+    }
+
+    #menu {
+        grid-column: 1 / span 2;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .menu-item {
+        display: inline-block;
+    }
+
+    #main {
+        grid-column: 1 / span 1;
+    }
+
+    #right {
+        grid-column: 2 / span 1;
+    }
+
+    #footer {
+        grid-column: 1 / span 2;
+    }
+}
+
+/* Mobile View (1 Column) - max-width: 520px */
+@media only screen and (max-width: 520px) {
+    body {
+        padding: 15px 8px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    #header, #menu, #main, #right, #footer {
+        grid-column: 1 / span 1;
+    }
+
+    #menu {
+        flex-direction: column;
+    }
+
+    .logo-img {
+        width: 240px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    #pokemon_pic {
+        width: 140px;
+    }
+
+    .flex_container {
+        gap: 10px;
+    }
+
+    .friend-card {
+        width: 120px;
+    }
+
+    .table_Border th, .table_Border td {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+}

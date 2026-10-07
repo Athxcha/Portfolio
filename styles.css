@@ -1,0 +1,666 @@
+/* รูปแบบหลัก */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #392451;
+    background-color: #f8f3fc;
+}
+
+a {
+    color: #d8c7e5;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #392451;
+}
+
+button {
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.container {
+    width: 88%;
+    max-width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#home,
+#contact,
+#fun-fact,
+#about,
+#education,
+#portfolio,
+#goals {
+    scroll-margin-top: 24px;
+}
+
+/* ส่วนหัวและเมนู */
+
+header {
+    padding: 25px 0 40px;
+    color: white;
+    background-color: #563477;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.brand {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.menu a {
+    display: inline-block;
+    padding: 12px 10px;
+    color: white;
+    font-size: 13px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.menu a:hover,
+.brand:hover {
+    color: #eadcf5;
+}
+
+/* Home */
+
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+h1 {
+    margin: 12px 0 20px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 38px;
+    line-height: 1.05;
+}
+
+.hero-text p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.small-heading {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.main-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 14px 22px;
+    color: white;
+    background-color: #9b70bd;
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.main-button:hover {
+    color: white;
+    background-color: #8054a3;
+    text-decoration: none;
+}
+
+/* กล่องรูป */
+
+.picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    color: #563477;
+    background-color: #eadcf5;
+    border: 2px dashed #a987c1;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.picture img {
+    max-width: 100%;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero-picture {
+    width: 86%;
+    height: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 180px 180px 0 0;
+}
+
+/* Contact */
+
+.services {
+    padding: 28px 0;
+    color: white;
+    background-color: #45265f;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.services h2 {
+    margin: 0 0 6px;
+    font-size: 14px;
+}
+
+.services .contact-section-title {
+    margin: 0 0 24px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.services p {
+    margin: 0;
+    color: #d8c7e5;
+    font-size: 12px;
+}
+
+.services .linkHead {
+    color: #d8c7e5;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.services .linkHead:hover {
+    color: white;
+}
+
+/* กล่องเดิม */
+
+.promotions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin: 50px 0 40px;
+}
+
+.promotion {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    padding: 20px;
+    background-color: #eee5f5;
+    border-radius: 6px;
+}
+
+.promotion h2 {
+    margin: 8px 0 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+}
+
+.promotion p,
+.promotion a {
+    font-size: 12px;
+}
+
+.promotion a {
+    text-decoration: underline;
+}
+
+.promotion-picture {
+    height: 150px;
+}
+
+/* หัวข้อและระยะห่างของแต่ละส่วน */
+
+.section-title {
+    margin: 8px 0 24px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+}
+
+.profile-section {
+    padding: 48px 0;
+}
+
+.profile-section + .profile-section {
+    border-top: 1px solid #dfd0e9;
+}
+
+.profile-heading {
+    margin-bottom: 28px;
+    text-align: center;
+}
+
+.profile-heading .small-heading {
+    margin: 0 0 10px;
+}
+
+.profile-heading .section-title {
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* Fun Fact, About Me และ Education */
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.profile-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 18px;
+    padding: 20px;
+    background-color: #eee5f5;
+    border-radius: 6px;
+    text-align: left;
+}
+
+.profile-card-text {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.profile-card-text .small-heading {
+    margin: 0 0 10px;
+    font-size: 11px;
+}
+
+.profile-card-text h3 {
+    margin: 0 0 16px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+.profile-card-text p {
+    margin: 0 0 8px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.profile-card-text p:last-child {
+    margin-bottom: 0;
+}
+
+.profile-card .profile-picture {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    height: 180px;
+    font-size: 14px;
+}
+
+/* ทักษะภายใน About Me */
+
+.profile-skills-title {
+    margin: 16px 0 8px;
+    font-size: 14px;
+}
+
+.profile-skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.profile-skill-tags li {
+    padding: 5px 8px;
+    color: #563477;
+    background-color: #e2d3ee;
+    border-radius: 5px;
+    font-size: 11px;
+}
+
+/* Portfolio */
+
+#shop,
+#portfolio {
+    padding-bottom: 55px;
+    text-align: center;
+}
+
+#portfolio.profile-section {
+    padding: 48px 0 55px;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 28px;
+}
+
+.tab-buttons button {
+    margin: 4px;
+    padding: 13px 16px;
+    color: #674b7b;
+    background-color: #f8f3fc;
+    border: 1px solid #b7a5c4;
+    border-radius: 25px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.tab-buttons button:hover,
+.tab-buttons .active {
+    color: white;
+    background-color: #45265f;
+    border-color: #45265f;
+}
+
+#work-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: left;
+}
+
+.work-card {
+    min-width: 0;
+}
+
+.work-card h3 {
+    margin: 12px 0 6px;
+    font-size: 15px;
+}
+
+.work-description {
+    margin: 0;
+    color: #80549b;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.work-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 13px 20px;
+    color: white;
+    background-color: #563477;
+    border: 1px solid #563477;
+    border-radius: 25px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.work-link:hover,
+.work-link:focus {
+    color: white;
+    background-color: #9b70bd;
+    border-color: #9b70bd;
+    text-decoration: none;
+}
+
+/* Goals และแบนเนอร์ด้านล่าง */
+
+.life-banner {
+    padding: 40px 0;
+    color: white;
+    background-color: #45265f;
+}
+
+.life-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 24px;
+}
+
+.life-content h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 32px;
+}
+
+.life-content p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.life-pictures {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.round-picture {
+    width: 44%;
+    height: 140px;
+    margin: 4px;
+    border-radius: 50%;
+}
+
+#goals .profile-heading {
+    margin-bottom: 32px;
+}
+
+/* Footer */
+
+footer {
+    padding: 18px 0;
+    color: white;
+    background-color: #321b46;
+    font-size: 12px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+footer a:hover {
+    color: white;
+}
+
+/* แท็บเล็ต */
+
+@media screen and (min-width: 600px) {
+    #work-list,
+    .hero,
+    .promotions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .service-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* กล่องคู่ */
+
+@media screen and (min-width: 760px) {
+    .profile-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* คอมพิวเตอร์ */
+
+@media screen and (min-width: 900px) {
+    #work-list,
+    .life-content {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    h1 {
+        font-size: 52px;
+    }
+
+    .hero-picture {
+        height: 380px;
+    }
+}
+
+/* มือถือ */
+
+@media screen and (max-width: 480px) {
+    .profile-section {
+        padding: 36px 0;
+    }
+
+    .profile-heading .section-title {
+        font-size: 28px;
+    }
+
+    .profile-card {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .profile-card-text h3 {
+        font-size: 22px;
+    }
+
+    .profile-card .profile-picture {
+        height: 150px;
+        font-size: 12px;
+    }
+
+    .menu a {
+        padding: 10px 7px;
+        font-size: 12px;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Consistent layout and persistent navigation */
+.sticky-navigation {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 0;
+    background: #563477;
+    box-shadow: 0 2px 8px rgba(50, 27, 70, 0.12);
+}
+
+.sticky-navigation .navigation {
+    gap: 8px 24px;
+}
+
+#home, #contact, #about, #fun-fact, #skills,
+#education, #portfolio, #goals {
+    scroll-margin-top: 120px;
+}
+
+.hero {
+    margin-top: 16px;
+}
+
+.profile-card {
+    min-width: 0;
+    height: 100%;
+}
+
+.profile-card-text h3 {
+    line-height: 1.35;
+}
+
+.profile-section,
+#portfolio.profile-section {
+    padding: 48px 0;
+}
+
+.round-picture {
+    height: auto;
+    aspect-ratio: 1;
+}
+
+@media screen and (min-width: 760px) {
+    #about .profile-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    #about .profile-card {
+        grid-column: span 2;
+    }
+
+    #about #skills {
+        grid-column: 2 / span 2;
+    }
+}
+
+@media screen and (max-width: 759px) {
+    .sticky-navigation .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sticky-navigation .menu {
+        flex-wrap: nowrap;
+        width: 100%;
+        min-width: 0;
+        overflow-x: auto;
+    }
+
+    .sticky-navigation .menu a {
+        flex-shrink: 0;
+        padding: 10px 8px;
+        white-space: nowrap;
+    }
+
+    .hero {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    h1 {
+        font-size: clamp(32px, 8vw, 46px);
+        overflow-wrap: anywhere;
+    }
+
+    .hero-picture {
+        max-width: 420px;
+        height: 280px;
+    }
+
+    .profile-section,
+    #portfolio.profile-section {
+        padding: 36px 0;
+    }
+}

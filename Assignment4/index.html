@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Pokédex - Responsive Grid Hub</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <!-- เลือกใช้ Stylesheet ได้: 'modern.css' (Modern Grid & Units) หรือ 'main.css' (Classic Slide Style) -->
+    <!-- <link id="theme-style" rel='stylesheet' type='text/css' media='screen' href='modern.css'> -->
+    <link id="theme-style" rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+
+<body>
+
+    <!-- ================================================================= -->
+    <!-- COMPLETE POKÉDEX RESPONSIVE GRID LAYOUT (ตกแต่งเต็มรูปแบบ) -->
+    <!-- ================================================================= -->
+    <div class="grid-container">
+        <!-- 1. Header Section (Spans all columns) -->
+        <div id="header" class="grid-card">
+            <div>
+                <img class="logo-img" src="pic/LOGO.png" alt="Pokemon Logo">
+            </div>
+            
+        </div>
+
+        <!-- 2. Menu Navigation Sidebar (Column 1 on Desktop) -->
+        <div id="menu" class="grid-card">
+            <div class="menu-title" style="font-weight: 700; color: #2b6cb0; margin-bottom: 5px; font-size: 16px;">Navigation</div>
+            <a href="#profile" class="menu-item active">⚡ Main</a>
+            <a href="#cp-values" class="menu-item">🐾 Ingredients </a>
+            <a href="#friends" class="menu-item">📈 Instructions </a>
+
+        </div>
+
+        <!-- 3. Main Content Section (Column 2 on Desktop) -->
+        <div id="main" class="grid-card">
+            <!-- Pikachu Profile Banner & Image -->
+            <div id="profile" class="content-section">
+                <h1><span>Recipe</span> Pizza Dip</h1>
+                <img id="pokemon_pic" src="pizza-dip-9.jpeg" alt="Pikachu">
+            </div>
+            
+            <hr>
+            <div id="cp-values" class="content-section">
+                <h2>Ingredients </h2>
+                
+                <table class="table_Border">
+                    <tr>
+                        <th>APART BREAD</th>
+                        <th>Weight</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>Grands biscuit dough</td>
+                        <td>16.3 ounce</td>
+                
+                    </tr>
+                    <tr>
+                        <td>melted butter</td>
+                        <td>8 count ¼ cup</td>
+
+                    </tr>
+                    <tr>
+                        <td>parmesan cheese</td>
+                        <td>2 teaspoons</td>
+                    </tr>
+                    <tr>
+                        <td>Italian seasoning,</td>
+                        <td>grated 1 teaspoon</td>
+                    </tr>
+                     <tr>
+                        <th>PIZZA DIP</th>
+                        <th>Weight</th>
+                        
+                    </tr>
+                    <tr>
+                        <td>cream cheese</td>
+                        <td>8 ounces</td>
+                    </tr>
+                    <tr>
+                        <td> ricotta cheese</td>
+                        <td>softened 1 cup</td>
+                    </tr>
+                    <tr>
+                        <td>Italian seasoning</td>
+                        <td>3 teaspoons</td>
+                    </tr>
+                    <tr>
+                        <td>marinara sauce</td>
+                        <td>divided 1 cup</td>
+                    </tr>
+                </table>
+                
+            </div>
+             <div id="friends" class="content-section">
+                <h2>Instructions </h2>
+                <div class="flex_container"> 
+                    <div class="friend-card">
+                        <img src="pizza-dip-2.jpeg" alt="Bulbasaur">
+                        <div class="pokemon-name">\ Italian seasoning in a bowl.</div>
+                    </div>
+                    <div class="friend-card">
+                        <img src="pizza-dip-3.jpeg" alt="Charmander">
+                        <div class="pokemon-name">Combine the melted butter, parmesan cheese, and 1 teaspoon Italian seasoning in a bowl.</div>
+                    </div>
+                    <div class="friend-card">
+                        <img src="pizza-dip-4.jpeg" alt="Charmeleon">
+                        <div class="pokemon-name">Roll each of the balls of biscuit dough in the seasoned butter, then arrange them around the edge of a greased large cast iron skillet.</div>
+                    </div>
+                    <div class="friend-card">
+                        <img src="pizza-dip-5.jpeg" alt="Squirtle">
+                        <div class="pokemon-name">In a large bowl, use an electric mixer, or stand mixer, to combine the cream cheese, ricotta cheese and 2 teaspoons Italian seasoning.</div>
+                    </div>
+                    <div class="friend-card">
+                        <img src="pizza-dip-6.jpeg" alt="Squirtle">
+                        <div class="pokemon-name">Spread the cream cheese mixture in the bottom of the skillet in the middle of the balls of dough.</div>
+                    </div>
+                    <div class="friend-card">
+                        <img src="pizza-dip-7.jpeg" alt="Squirtle">
+                        <div class="pokemon-name">Top with the marinara sauce, shredded mozzarella cheese and remaining 1 teaspoon Italian seasoning. Top with pepperonis, or another pizza topping of your choice.</div>
+                    </div>
+                    <div class="friend-card">
+                        <img src="pizza-dip-8.jpeg" alt="Squirtle">
+                        <div class="pokemon-name">Place in the oven and bake for 25-30 minutes.</div>
+                    </div>
+
+                </div>
+                 </div>
+            <!-- Quick Stats -->
+            
+            
+            
+
+            <!-- Friends Flex Gallery -->
+            <!-- <div id="friends" class="content-section">
+                <h2>Friends</h2>
+                <div class="flex_container"> 
+                    <div class="friend-card">
+                        <img src="pic/bulbasaur.png" alt="Bulbasaur">
+                        <div class="pokemon-name">Bulbasaur</div>
+                    </div>
+                    <div class="friend-card">
+                        <img src="pic/charmander.png" alt="Charmander">
+                        <div class="pokemon-name">Charmander</div>
+                    </div>
+                    <div class="friend-card">
+                        <img src="pic/charmeleon.png" alt="Charmeleon">
+                        <div class="pokemon-name">Charmeleon</div>
+                    </div>
+                    <div class="friend-card">
+                        <img src="pic/squirtle.png" alt="Squirtle">
+                        <div class="pokemon-name">Squirtle</div>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Min/Max CP Values Table -->
+            <!-- <div id="cp-values" class="content-section">
+                <h2>Pokemon Min/Max CP values</h2>
+                <table class="table_Border">
+                    <tr>
+                        <th>Level</th>
+                        <th>Min CP</th>
+                        <th>Max CP</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>10</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td>1.5</td>
+                        <td>21</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>32</td>
+                        <td>41</td>
+                    </tr>
+                    <tr>
+                        <td>2.5</td>
+                        <td>42</td>
+                        <td>55</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>53</td>
+                        <td>69</td>
+                    </tr>
+                </table>
+            </div> -->
+        </div>
+
+        <!-- 4. Right Sidebar Ads & Extras (Column 3 on Desktop) -->
+        <div id="right" class="grid-card">
+            
+            <div id="newsletter" class="content-section">
+                <div class="sidebar-header">Our Menu</div>
+                <div class="ad-card"><img src="pizza.jpg" alt="Starbucks Promo"></div>
+                <div class="ad-card"><img src="pic/pizza2.jpg" alt="McDonald's Promo"></div>
+                <div class="rotate-ball-container"><img class="rotate-ball" src="pic/Pizza3.png" alt="Pokemon Ball"></div>
+            </div>
+        </div>
+
+        <!-- 5. Footer Section (Spans all columns) -->
+        <div id="footer" class="grid-card">
+            <div>
+                <span>
+                    If you want to know more, please click!:
+                    <a href=" https://whitneybond.com/pizza-dip/" target="_blank">Reference</a>
+                </span>
+                <br>
+                
+            </div>
+        </div>
+    </div>
+    
+    <!-- Script for Live Stylesheet Switching during class teaching -->
+    <script>
+        function toggleTheme() {
+            const link = document.getElementById('theme-style');
+            const label = document.getElementById('current-theme-label');
+            if (link.getAttribute('href') === 'modern.css') {
+                link.setAttribute('href', 'main.css');
+                label.textContent = 'main.css (Classic Slide Style)';
+            } else {
+                link.setAttribute('href', 'modern.css');
+                label.textContent = 'modern.css (Modern Grid + fr + Mobile-First)';
+            }
+        }
+    </script>
+</body>
+</html>

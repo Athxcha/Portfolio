@@ -1,0 +1,547 @@
+/* ==========================================================================
+   MODERN RESPONSIVE CSS & ADVANCED GRID GUIDE (Week 4 Modern Edition)
+   ==========================================================================
+   หัวข้อหลักในไฟล์นี้:
+   1. Modern Grid Techniques (Fraction Unit 'fr', auto-fit, minmax(), grid-template-areas)
+   2. Responsive Units & Modern Functions (rem, Fluid Typography clamp(), Responsive Images object-fit)
+   3. Mobile-First Architecture (@media min-width Approach)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. GOOGLE FONTS & CSS VARIABLES (Design Tokens)
+   -------------------------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    /* Color Palette */
+    --primary: #2b6cb0;
+    --primary-light: #ebf8ff;
+    --primary-dark: #1a365d;
+    --accent: #dd6b20;
+    --accent-light: #fffaf0;
+    --teal: #319795;
+    --text-dark: #2d3748;
+    --text-muted: #718096;
+    --bg-surface: rgba(255, 255, 255, 0.88);
+    --border-color: rgba(255, 255, 255, 0.7);
+    --border-subtle: #e2e8f0;
+    
+    /* Modern Spacing (Using rem for scalability) */
+    --space-xs: 0.5rem;   /* 8px */
+    --space-sm: 0.75rem;  /* 12px */
+    --space-md: 1.25rem;  /* 20px */
+    --space-lg: 1.75rem;  /* 28px */
+    --space-xl: 2.5rem;   /* 40px */
+    
+    /* Elevation Shadows */
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 12px 30px rgba(43, 108, 176, 0.2);
+    
+    /* Animation Timing */
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Global Box Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   2. RESPONSIVE UNITS & MODERN FUNCTIONS (rem, Fluid Typography clamp())
+   ========================================================================== */
+
+/* 
+   ทำไมต้องใช้ rem แทน px?
+   - 1rem = ขนาดฟอนต์เริ่มต้นของ root (โดยทั่วไป 16px)
+   - เมื่อผู้ใช้ปรับขนาดฟอนต์ใน Browser Settings (Accessibility), ค่า rem จะขยายตามทันที
+*/
+html {
+    font-size: 100%; /* 16px default */
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: var(--space-md) var(--space-sm);
+    font-family: 'Outfit', 'Poppins', sans-serif;
+    color: var(--text-dark);
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #3b82f6 100%);
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* 
+   Fluid Typography ด้วย clamp(min, preferred, max)
+   - ไม่ต้องเขียน @media query สลับขนาดฟอนต์หลายรอบ
+   - ฟอนต์จะย่อ-ขยายตามความกว้างหน้าจอ (vw) อัตโนมัติอย่างนุ่มนวล
+*/
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    font-weight: 700;
+    color: var(--primary);
+    background-color: var(--primary-light);
+    border-radius: 1rem;
+    padding: var(--space-sm) var(--space-md);
+    margin: var(--space-sm) auto var(--space-md) auto;
+    max-width: 38rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+}
+
+h1 span {
+    font-size: clamp(0.9rem, 2vw, 1.25rem);
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+    color: var(--primary-dark);
+    background-color: var(--primary-light);
+    border-radius: 0.75rem;
+    border-bottom: 3px solid var(--primary);
+    padding: var(--space-xs) var(--space-md);
+    margin: var(--space-lg) auto var(--space-sm) auto;
+    max-width: 32rem;
+    text-align: center;
+}
+
+/* 
+   Responsive Image Rules
+   - max-width: 100% ป้องกันภาพล้นการ์ด
+   - height: auto รักษาสัดส่วนภาพ (Aspect Ratio) ไม่ให้ภาพบี้แบน
+   - object-fit: contain/cover สำหรับจัดการภาพที่มีขนาดตายตัว
+*/
+img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.logo-img {
+    width: clamp(200px, 40vw, 320px);
+    height: auto;
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+}
+
+#pokemon_pic {
+    width: clamp(140px, 25vw, 200px);
+    border: 5px dotted var(--primary);
+    border-radius: 50%;
+    background-color: #ffffff;
+    padding: var(--space-xs);
+    vertical-align: middle;
+    box-shadow: 0 6px 16px rgba(49, 130, 206, 0.15);
+    transition: var(--transition-smooth);
+}
+
+#pokemon_pic:hover {
+    transform: scale(1.08) rotate(3deg);
+    filter: drop-shadow(0 8px 20px rgba(43, 108, 176, 0.35));
+}
+
+/* Glassmorphism Surface Container */
+.grid-card {
+    background: var(--bg-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 1.25rem;
+    padding: var(--space-md);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   1. MODERN GRID TECHNIQUES (Mobile-First Architecture)
+   ==========================================================================
+   3. แนวคิด "Mobile-First vs Desktop-First"
+   - Mobile-First: เริ่มเขียนโค้ดจากหน้าจอมือถือ (1 Column) เป็นค่าเริ่มต้น
+   - แล้วใช้ @media (min-width: ...) ขยายร่างเป็น 2 Columns และ 3 Columns
+   - เป็นมาตรฐานของวงการ Web ยุคใหม่ (Tailwind, Bootstrap, Modern Frontend)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   STEP 1: MOBILE VIEW (Default: 0px - 767px) -> 1 Column Layout
+   -------------------------------------------------------------------------- */
+.grid-container {
+    display: grid;
+    gap: var(--space-md);
+    max-width: 80rem; /* 1280px */
+    margin: 0 auto;
+    
+    /* 
+       grid-template-areas: ช่วยให้มองเห็น Layout ในรูปแบบภาพวาด ASCII ชัดเจน
+       ในมือถือ ทุกส่วนจะวางต่อกันเป็น 1 แถวยาวลงมา
+    */
+    grid-template-areas:
+        "header"
+        "menu"
+        "main"
+        "sidebar"
+        "footer";
+}
+
+/* Map Grid Areas to Element IDs */
+#header  { grid-area: header;  text-align: center; }
+#menu    { grid-area: menu;    text-align: center; }
+#main    { grid-area: main;    text-align: center; }
+#right   { grid-area: sidebar; text-align: center; }
+#footer  { grid-area: footer;  text-align: center; }
+
+/* Menu in Mobile: Stacked / Flex wrap */
+#menu {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+}
+
+/* --------------------------------------------------------------------------
+   STEP 2: TABLET VIEW (min-width: 768px) -> 2 Columns Layout
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+    body {
+        padding: var(--space-lg) var(--space-md);
+    }
+    
+    .grid-container {
+        gap: var(--space-md);
+        /* 
+           การใช้ Fraction Unit (fr):
+           - 1fr 280px : คอลัมน์ซ้ายยืดหยุ่นตามพื้นที่เหลือ (1fr), คอลัมน์ขวา 280px
+        */
+        grid-template-columns: 1fr 280px;
+        grid-template-areas:
+            "header  header"
+            "menu    menu"
+            "main    sidebar"
+            "footer  footer";
+    }
+    
+    #menu {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   STEP 3: DESKTOP VIEW (min-width: 1024px) -> 3 Columns Layout (Modern fr)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+    body {
+        padding: var(--space-xl) var(--space-lg);
+    }
+    
+    .grid-container {
+        gap: var(--space-lg);
+        /* 
+           Fraction Unit (fr) - หัวใจของ Modern Grid:
+           - 180px : Menu ด้านซ้าย
+           - 1fr   : Main Content ยืดหยุ่นกินพื้นที่หลักตรงกลาง
+           - 280px : Sidebar ด้านขวาสำหรับป้ายโฆษณา/เสริม
+           - ข้อดี: คำนวณ gap และ padding อัตโนมัติ ไม่มีวันล้นจอเหมือนการใช้ %
+        */
+        grid-template-columns: 180px 1fr 280px;
+        grid-template-areas:
+            "header  header  header"
+            "menu    main    sidebar"
+            "footer  footer  footer";
+    }
+    
+    #menu {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
+/* ==========================================================================
+   AUTOMATIC RESPONSIVE GRID (ไม่ง้อ Media Query ด้วย repeat, auto-fit, minmax)
+   ========================================================================== */
+
+/* 
+   Friends Grid Gallery
+   - repeat(auto-fit, minmax(130px, 1fr)):
+     * auto-fit : คำนวณจำนวนคอลัมน์ให้พอดีกับความกว้างหน้าจออัตโนมัติ
+     * minmax(130px, 1fr) : การ์ดแต่ละใบกว้างอย่างน้อย 130px และยืดขยายได้สูงสุด 1fr
+     * ผลลัพธ์: การ์ดจะตัดขึ้นบรรทัดใหม่และขยายเต็มพื้นที่อัตโนมัติทุกขนาดหน้าจอโดยไม่ต้องเขียน @media เลย!
+*/
+.flex_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: var(--space-md);
+    margin: var(--space-md) auto;
+    padding: var(--space-xs);
+    width: 100%;
+}
+
+.friend-card {
+    background-color: #ffffff;
+    border: 2px solid var(--border-subtle);
+    border-radius: 0.875rem;
+    padding: var(--space-sm) var(--space-xs);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.friend-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow-hover);
+}
+
+.friend-card img {
+    width: 90px;
+    height: 90px;
+    object-fit: contain; /* ป้องกันภาพเสียสัดส่วน */
+    transition: var(--transition-smooth);
+}
+
+.friend-card:hover img {
+    transform: scale(1.12);
+}
+
+.pokemon-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-top: var(--space-xs);
+}
+
+/* ==========================================================================
+   NAVIGATION MENU ITEMS (Interactive Micro-interactions)
+   ========================================================================== */
+.content-section {
+    scroll-margin-top: 2rem;
+}
+
+.menu-item {
+    background-color: #ffffff;
+    color: var(--text-dark);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-item:hover {
+    background-color: var(--primary);
+    color: #ffffff;
+    text-decoration: none;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--primary);
+}
+
+.menu-item.active {
+    background-color: var(--primary-light);
+    color: var(--primary);
+    border-color: var(--primary);
+    border-left: 5px solid var(--primary);
+}
+
+/* ==========================================================================
+   TABLES & STATS STYLING
+   ========================================================================== */
+.table_stat {
+    margin: var(--space-md) auto;
+    border-collapse: collapse;
+    width: 15rem;
+    background-color: #ffffff;
+    border-radius: 0.625rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-subtle);
+}
+
+.table_stat th, .table_stat td {
+    padding: var(--space-xs) var(--space-md);
+    text-align: center;
+}
+
+.table_stat th {
+    background-color: var(--teal);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.table_stat td {
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.table_Border {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 35rem;
+    margin: var(--space-md) auto;
+    background-color: #ffffff;
+    box-shadow: var(--shadow-md);
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+}
+
+.table_Border th, .table_Border td {
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+}
+
+.table_Border th {
+    background-color: var(--primary);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.table_Border td {
+    border-bottom: 1px solid var(--border-subtle);
+    color: var(--text-dark);
+    font-size: 0.9rem;
+}
+
+.table_Border tr:nth-child(even) td {
+    background-color: #f7fafc;
+}
+
+.table_Border tr:hover td {
+    background-color: var(--primary-light);
+    color: var(--primary);
+}
+
+/* Quick Stats List */
+.left_page {
+    text-align: left;
+    max-width: 25rem;
+    margin: 0 auto;
+}
+
+ul {
+    font-family: Garamond, "Times New Roman", serif; 
+    font-size: 1.25rem;
+    font-weight: bold;
+    font-style: italic;
+    background-color: var(--accent-light);
+    border-left: 5px solid var(--accent);
+    border-radius: 0.625rem;
+    box-shadow: var(--shadow-sm);
+    margin: var(--space-md) auto;
+    padding: var(--space-md) var(--space-xl);
+}
+
+ul li {
+    margin-bottom: var(--space-xs);
+    color: #5a3e2b;
+}
+
+hr {
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    border: none;
+    border-radius: 2px;
+    max-width: 38rem;
+    margin: var(--space-lg) auto;
+}
+
+/* ==========================================================================
+   RIGHT SIDEBAR (Ads & Animation)
+   ========================================================================== */
+.sidebar-header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: var(--space-sm);
+    background-color: var(--primary-light);
+    padding: var(--space-xs);
+    border-radius: 0.5rem;
+}
+
+.ad-card {
+    background-color: #ffffff;
+    border-radius: 0.75rem;
+    padding: var(--space-xs);
+    margin-bottom: var(--space-sm);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-subtle);
+    transition: var(--transition-smooth);
+}
+
+.ad-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.ad-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    display: block;
+    object-fit: cover;
+}
+
+.rotate-ball-container {
+    margin-top: var(--space-md);
+}
+
+.rotate-ball {
+    width: 4.5rem;
+    height: 4.5rem;
+    animation: rotateBall 6s linear infinite;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+}
+
+@keyframes rotateBall {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   FOOTER & INTERACTIVE LINKS
+   ========================================================================== */
+#footer div {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 2.2;
+}
+
+div a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary);
+    background-color: var(--primary-light);
+    padding: 0.4rem 1rem;
+    border-radius: 1rem;
+    display: inline-block;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-smooth);
+}
+
+div a:hover {
+    background-color: var(--primary);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+div a:active {
+    transform: translateY(1px) scale(0.97);
+}

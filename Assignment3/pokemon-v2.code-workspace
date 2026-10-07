@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../assignment-3/assignment-3/pic"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "pokemon-v2"
+	}
+}

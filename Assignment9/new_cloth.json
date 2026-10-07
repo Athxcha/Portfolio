@@ -1,0 +1,56 @@
+[
+  {
+    "brandname": "A.K.O.O Clothing",
+    "price": "200",
+    "pic": "top1.jpg",
+    "stock": 12
+  },
+  {
+    "brandname": "B.K.T Clothing",
+    "price": "500",
+    "pic": "top2.jpg",
+    "stock": 13
+  },
+  {
+    "brandname": "R.O.V. Clothing",
+    "price": "700",
+    "pic": "top3.jpg",
+    "stock": 50
+  },
+  {
+    "brandname": "C.O.M Clothing",
+    "price": "800",
+    "pic": "top4.jpg",
+    "stock": 22
+  },
+  {
+    "brandname": "W.W.E Clothing",
+    "price": "100",
+    "pic": "top5.jpg",
+    "stock": 55
+  },
+  {
+    "brandname": "C.E.N Clothing",
+    "price": "600",
+    "pic": "top6.jpg",
+    "stock": 87
+  },
+  {
+    "brandname": "S.E.R Clothing",
+    "price": "1000",
+    "pic": "top7.jpg",
+    "stock": 12
+  },
+  {
+    "brandname": "V.A.R Clothing",
+    "price": "1200",
+    "pic": "top8.jpg",
+    "stock": 29
+  },
+  {
+    "brandname": "J.O.K.ES Clothing",
+    "price": "550",
+    "pic": "top9.jpg",
+    "stock": 10
+  }
+]
