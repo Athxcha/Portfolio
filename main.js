@@ -4,12 +4,12 @@ var work1 = [
     {name: "Assignment 2", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment2/"},
     {name: "Assignment 3", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment3/"},
     {name: "Assignment 4", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment4/"},
-    {name: "Assignment 5", description: "$4.00", image: "", link: "hhttps://athxcha.github.io/Portfolio/Assignment5/"},
-    {name: "Assignment 6", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment6/"},
+    {name: "Assignment 5", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment5/"},
+    {name: "Assignment 6", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment6/register.html"},
     {name: "Assignment 7", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment7/"},
     {name: "Assignment 8", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment8/"},
-    {name: "Assignment 9", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment9/"},
-    {name: "Assignment 10", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment10/"}
+    {name: "Assignment 9", description: "$4.00", image: "", link: "https://github.com/athxcha/Portfolio/tree/main/Assignment9"},
+    {name: "Assignment 10", description: "$4.00", image: "",link: "https://athxcha.github.io/Portfolio/Assignment10/"}
 ];
 
 // ข้อมูลผลงานแถบที่สอง: Game มี 5 งาน
