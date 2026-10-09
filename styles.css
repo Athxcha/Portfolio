@@ -1,12 +1,5 @@
+
 /* รูปแบบหลัก */
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
 
 body {
     margin: 0;
@@ -26,32 +19,26 @@ a:hover {
 
 button {
     font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
 }
 
 .container {
-    width: 88%;
-    max-width: 1080px;
+    width: 94%;
+    max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
 }
 
-#home,
-#contact,
-#fun-fact,
-#about,
-#education,
-#portfolio,
-#goals {
-    scroll-margin-top: 24px;
-}
+
 
 /* ส่วนหัวและเมนู */
 
-header {
-    padding: 25px 0 40px;
-    color: white;
-    background-color: #563477;
+.sticky-navigation {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 12px 0;
+    background-color: #45265f;
+    box-shadow: 0 2px 8px rgba(50, 27, 70, 0.12);
 }
 
 .navigation {
@@ -66,6 +53,7 @@ header {
     color: white;
     font-size: 18px;
     font-weight: bold;
+     font-style: italic;
 }
 
 .menu {
@@ -81,7 +69,6 @@ header {
     color: white;
     font-size: 13px;
     text-decoration: underline;
-    text-underline-offset: 4px;
 }
 
 .menu a:hover,
@@ -89,14 +76,21 @@ header {
     color: #eadcf5;
 }
 
+
 /* Home */
+
+header {
+    padding: 25px 0 40px;
+    color: white;
+    background-color: #563477;
+}
 
 .hero {
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 16px;
 }
 
 h1 {
@@ -133,13 +127,25 @@ h1 {
     text-decoration: none;
 }
 
+.hero-text {
+    margin-left: 70px;
+}
+
+@media screen and (max-width: 759px) {
+    .hero-text {
+        margin-left: 0;
+    }
+}
+
+
+
 /* กล่องรูป */
 
 .picture {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 180px;
+    height: 250px;
     color: #563477;
     background-color: #eadcf5;
     border: 2px dashed #a987c1;
@@ -150,17 +156,39 @@ h1 {
 .picture img {
     max-width: 100%;
     width: auto;
-    height: 100%;
-    object-fit: contain;
+    height: auto;
 }
 
 .hero-picture {
-    width: 86%;
-    height: 320px;
+    width: 72%;
+    max-width: 440px;
+    height: auto;
     margin-left: auto;
     margin-right: auto;
-    border-radius: 180px 180px 0 0;
 }
+
+.hero-picture img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ขยายชื่อ */
+.hero-text h1 {
+    font-size: 64px;
+}
+
+/* ขยายรหัสนักศึกษา */
+.hero-text .small-heading {
+    font-size: 16px;
+}
+
+/* ขยายข้อความคำคม */
+.hero-text p {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
 
 /* Contact */
 
@@ -174,36 +202,41 @@ h1 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
 .services h2 {
     margin: 0 0 6px;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .services .contact-section-title {
     margin: 0 0 24px;
     font-size: 24px;
     text-align: center;
+    text-decoration: underline;
 }
 
 .services p {
     margin: 0;
     color: #d8c7e5;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .services .linkHead {
     color: #d8c7e5;
     text-decoration: underline;
-    text-underline-offset: 3px;
 }
 
 .services .linkHead:hover {
     color: white;
 }
 
-/* กล่องเดิม */
+
+/* กล่องข้อมูล */
 
 .promotions {
     display: grid;
@@ -214,7 +247,7 @@ h1 {
 
 .promotion {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 12px;
     padding: 20px;
@@ -241,7 +274,8 @@ h1 {
     height: 150px;
 }
 
-/* หัวข้อและระยะห่างของแต่ละส่วน */
+
+/* หัวข้อและระยะห่าง */
 
 .section-title {
     margin: 8px 0 24px;
@@ -253,7 +287,8 @@ h1 {
     padding: 48px 0;
 }
 
-.profile-section + .profile-section {
+#education,
+#portfolio {
     border-top: 1px solid #dfd0e9;
 }
 
@@ -271,6 +306,7 @@ h1 {
     line-height: 1.3;
 }
 
+
 /* Fun Fact, About Me และ Education */
 
 .profile-grid {
@@ -281,18 +317,13 @@ h1 {
 
 .profile-card {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 18px;
     padding: 20px;
     background-color: #eee5f5;
     border-radius: 6px;
     text-align: left;
-}
-
-.profile-card-text {
-    min-width: 0;
-    overflow-wrap: anywhere;
 }
 
 .profile-card-text .small-heading {
@@ -304,7 +335,7 @@ h1 {
     margin: 0 0 16px;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 26px;
-    line-height: 1.2;
+    line-height: 1.35;
 }
 
 .profile-card-text p {
@@ -313,17 +344,12 @@ h1 {
     line-height: 1.6;
 }
 
-.profile-card-text p:last-child {
-    margin-bottom: 0;
-}
-
 .profile-card .profile-picture {
-    box-sizing: border-box;
     width: 100%;
-    min-width: 0;
     height: 180px;
     font-size: 14px;
 }
+
 
 /* ทักษะภายใน About Me */
 
@@ -341,6 +367,7 @@ h1 {
     list-style: none;
 }
 
+
 .profile-skill-tags li {
     padding: 5px 8px;
     color: #563477;
@@ -349,7 +376,12 @@ h1 {
     font-size: 11px;
 }
 
-/* Portfolio */
+#about #skills {
+    grid-column: 2 / span 2;
+}
+
+
+/* Portfolio - เก็บหน้าตาตามภาพเดิม */
 
 #shop,
 #portfolio {
@@ -357,8 +389,8 @@ h1 {
     text-align: center;
 }
 
-#portfolio.profile-section {
-    padding: 48px 0 55px;
+#portfolio {
+    padding: 48px 0;
 }
 
 .tab-buttons {
@@ -394,7 +426,7 @@ h1 {
 }
 
 .work-card {
-    min-width: 0;
+    width: 100%;
 }
 
 .work-card h3 {
@@ -429,6 +461,16 @@ h1 {
     text-decoration: none;
 }
 
+
+/* รูปภาพผลงาน */
+
+#work-list .picture img {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+}
+
+
 /* Goals และแบนเนอร์ด้านล่าง */
 
 .life-banner {
@@ -462,15 +504,27 @@ h1 {
 }
 
 .round-picture {
-    width: 44%;
-    height: 140px;
+    width: 240px;
+    height: auto;
     margin: 4px;
-    border-radius: 50%;
+    border: 3px dashed #d8c2f0;
+    border-radius: 20px;
+    background-color: transparent;
 }
+
+.round-picture img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+
+
+/* Goals */
 
 #goals .profile-heading {
     margin-bottom: 32px;
 }
+
 
 /* Footer */
 
@@ -493,9 +547,11 @@ footer a:hover {
     color: white;
 }
 
+
 /* แท็บเล็ต */
 
 @media screen and (min-width: 600px) {
+
     #work-list,
     .hero,
     .promotions {
@@ -507,17 +563,33 @@ footer a:hover {
     }
 }
 
+
 /* กล่องคู่ */
 
 @media screen and (min-width: 760px) {
+
     .profile-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+
+    #about .profile-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    #about .profile-card {
+        grid-column: span 2;
+    }
+
+    #about #skills {
+        grid-column: 2 / span 2;
+    }
 }
+
 
 /* คอมพิวเตอร์ */
 
 @media screen and (min-width: 900px) {
+
     #work-list,
     .life-content {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -528,16 +600,45 @@ footer a:hover {
     }
 
     .hero-picture {
-        height: 380px;
+        height: auto;
     }
 }
 
+
 /* มือถือ */
 
-@media screen and (max-width: 480px) {
-    .profile-section {
+@media screen and (max-width: 759px) {
+
+    .sticky-navigation .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sticky-navigation .menu {
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .hero-picture {
+        max-width: 420px;
+        height: auto;
+    }
+
+    .profile-section,
+    #portfolio {
         padding: 36px 0;
     }
+}
+
+@media screen and (max-width: 480px) {
 
     .profile-heading .section-title {
         font-size: 28px;
@@ -564,103 +665,60 @@ footer a:hover {
 }
 
 
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
+/* Popup รูปภาพ - กดชื่อ Aticha Wongpanich */
+
+#openPhoto {
+    cursor: pointer;
+    text-decoration: underline;
 }
 
-/* Consistent layout and persistent navigation */
-.sticky-navigation {
-    position: sticky;
+#photoPopup {
+    display: none;
+    position: fixed;
     top: 0;
-    z-index: 1000;
-    padding: 12px 0;
-    background: #563477;
-    box-shadow: 0 2px 8px rgba(50, 27, 70, 0.12);
-}
-
-.sticky-navigation .navigation {
-    gap: 8px 24px;
-}
-
-#home, #contact, #about, #fun-fact, #skills,
-#education, #portfolio, #goals {
-    scroll-margin-top: 120px;
-}
-
-.hero {
-    margin-top: 16px;
-}
-
-.profile-card {
-    min-width: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
 }
 
-.profile-card-text h3 {
-    line-height: 1.35;
-}
-
-.profile-section,
-#portfolio.profile-section {
-    padding: 48px 0;
-}
-
-.round-picture {
+#photoPopup img {
+    max-width: 90%;
+    max-height: 85%;
+    width: auto;
     height: auto;
-    aspect-ratio: 1;
+    object-fit: contain;
 }
 
-@media screen and (min-width: 760px) {
-    #about .profile-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    #about .profile-card {
-        grid-column: span 2;
-    }
-
-    #about #skills {
-        grid-column: 2 / span 2;
-    }
+#closePhoto {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
 }
 
-@media screen and (max-width: 759px) {
-    .sticky-navigation .navigation {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 
-    .sticky-navigation .menu {
-        flex-wrap: nowrap;
-        width: 100%;
-        min-width: 0;
-        overflow-x: auto;
-    }
+/* ปรับรูป About Me และ Education */
+.profile-card .profile-picture {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
 
-    .sticky-navigation .menu a {
-        flex-shrink: 0;
-        padding: 10px 8px;
-        white-space: nowrap;
-    }
-
-    .hero {
-        grid-template-columns: minmax(0, 1fr);
-    }
-
-    h1 {
-        font-size: clamp(32px, 8vw, 46px);
-        overflow-wrap: anywhere;
-    }
-
-    .hero-picture {
-        max-width: 420px;
-        height: 280px;
-    }
-
-    .profile-section,
-    #portfolio.profile-section {
-        padding: 36px 0;
-    }
+/* ปรับขนาดรูปไม่ให้ล้นกรอบ */
+.profile-card .profile-picture img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }

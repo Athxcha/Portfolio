@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>MDT312 - JavaScript 3</title>
+	<meta name='viewport' content='width=device-width, initial-scale=1'>
+	<link rel='stylesheet' type='text/css' media='screen' href='week7.css'>
+	<script src='week7.js'></script>
+</head>
+<body>
+	<header class="page-header">
+		<h1>JavaScript 3: DOM, Events &amp; Timers</h1>
+	</header>
+
+	<main class="container">
+		<!-- 1. Setting a timer (Slides 11–16) -->
+		<section class="demo-card">
+			<h2>1. Setting a Timer (setTimeout, setInterval, Parameters)</h2>
+			
+			<div class="sub-demo">
+				<h3>1.1 setTimeout</h3>
+				<span id="output"></span>
+				<button id="clickme" class="btn btn-primary">Click me (setTimeout 5s)</button>
+			</div>
+
+			<div class="sub-demo">
+				<h3>1.2 setInterval</h3>
+				<div id="outputInterval" class="result-box"></div>
+				<button id="intervalBtn" class="btn btn-secondary">Start / Stop setInterval</button>
+			</div>
+
+			<div class="sub-demo">
+				<h3>1.3 Passing Parameters to Timer</h3>
+				<button id="multiplyBtn" class="btn btn-primary">Multiply 6 * 7 (2s delay)</button>
+			</div>
+		</section>
+
+		<!-- 2. textContent vs innerHTML (Slides 19–20) -->
+		<section class="demo-card">
+			<h2>2. textContent vs innerHTML</h2>
+			<div class="btn-group">
+				<button id="addTextContentBtn" class="btn btn-primary">เพิ่มด้วย textContent</button>
+				<button id="addInnerHTMLBtn" class="btn btn-secondary">เพิ่มด้วย innerHTML</button>
+				<button id="clearTextDemoBtn" class="btn btn-danger">Clear</button>
+			</div>
+			<div id="textContentResult" class="result-box"></div>
+		</section>
+
+		<!-- 3. Create new elements & Setting Style by DOM (Slides 21–25) -->
+		<section class="demo-card">
+			<h2>3. Create New Elements &amp; Style by DOM Object</h2>
+			<div class="btn-group">
+				<button id="addParaBtn" class="btn btn-primary">สร้าง &lt;p&gt; ใหม่ (appendChild)</button>
+				<button id="styleDomBtn" class="btn btn-secondary">กำหนด Style (color: red, marginLeft: 50px)</button>
+			</div>
+			<div id="main" class="result-box"></div>
+		</section>
+
+		<!-- 4. Selecting groups of DOM objects (Slides 26–28) -->
+		<section class="demo-card">
+			<h2>4. Selecting Groups of DOM Objects (querySelectorAll)</h2>
+			<div class="btn-group">
+				<button id="highlightAddressBtn" class="btn btn-primary">Highlight #address p</button>
+				<button id="highlightPTagBtn" class="btn btn-primary">Highlight p tag</button>
+				<button id="resetAddressBtn" class="btn btn-secondary">Reset</button>
+			</div>
+
+			<p>This is my address</p>
+			<div id="address" class="address-box">
+				<p>1234 Street</p>
+				<p>Atlanta, GA</p>
+			</div>
+		</section>
+
+		<!-- 5. Getting/setting CSS classes: className & classList (Slides 29–35) -->
+		<section class="demo-card">
+			<h2>5. CSS Classes (className &amp; classList)</h2>
+			<div class="btn-group">
+				<button id="toggleHighlightBtn" class="btn btn-primary">classList.toggle("highlight")</button>
+				<button id="addClassHighlight2Btn" class="btn btn-secondary">classList.add("highlight2")</button>
+				<button id="resetClassBtn" class="btn btn-danger">Reset Class</button>
+			</div>
+			<div id="classTarget" class="class-target-box">
+				<p>A paragraph!</p>
+			</div>
+		</section>
+
+		<!-- 6. Removing a node & ตรวจ element ก่อนลบหรือสร้างใหม่ (Slides 39–40) -->
+		<section class="demo-card">
+			<h2>6. Removing a Node (remove vs parentNode.removeChild)</h2>
+			<div class="btn-group">
+				<button id="removeBtn" class="btn btn-danger">ลบด้วย element.remove()</button>
+				<button id="removeChildBtn" class="btn btn-secondary">ลบด้วย parentNode.removeChild()</button>
+				<button id="resetRemovalBtn" class="btn btn-primary">Reset Items</button>
+			</div>
+			<div id="main2" class="result-box">
+				<div id="box-remove" class="removable-item">Item 1 (.remove())</div>
+				<div id="box-removeChild" class="removable-item">Item 2 (.parentNode.removeChild())</div>
+			</div>
+
+			<div style="margin-top: 14px;">
+				<h3>ตรวจ element ก่อนลบหรือสร้างใหม่</h3>
+				<button id="removeMeBtn" class="btn btn-danger">Toggle / removeMe()</button>
+				<div id="mainToggleRemove" class="result-box">
+					<h3 id="removeMe" class="removable-item">Hello World,</h3>
+				</div>
+			</div>
+		</section>
+
+		<!-- 7. JavaScript Events & Mouse Events (Slides 41–45) -->
+		<section class="demo-card">
+			<h2>7. Event Object &amp; Mouse Events (Coordinates)</h2>
+			<div id="target" class="mouse-box">Move the mouse over me!</div>
+		</section>
+
+		<!-- 8. Event Delegation (Interactive Task List) -->
+		<section class="demo-card">
+			<h2>8. Event Delegation (Interactive Task List)</h2>
+			<div class="todo-input-bar">
+				<input type="text" id="taskInput" placeholder="พิมพ์รายการใหม่..." class="task-input">
+				<button id="addTaskBtn" class="btn btn-success">+ เพิ่มรายการ</button>
+			</div>
+			<div class="todo-header-bar">
+				<span id="task-count" class="badge">รายการทั้งหมด: 3 งาน</span>
+			</div>
+			<ul id="todo-list" class="todo-list">
+				<li class="todo-item">
+					<span class="task-text">Task 1: ทบทวนเรื่อง DOM Manipulation</span>
+					<button class="delete-btn" title="ลบรายการ">❌</button>
+				</li>
+				<li class="todo-item">
+					<span class="task-text">Task 2: ศึกษา Event Delegation บน Container</span>
+					<button class="delete-btn" title="ลบรายการ">❌</button>
+				</li>
+				<li class="todo-item completed">
+					<span class="task-text">Task 3: ทดสอบ textContent vs innerHTML</span>
+					<button class="delete-btn" title="ลบรายการ">❌</button>
+				</li>
+			</ul>
+		</section>
+	</main>
+</body>
+</html>

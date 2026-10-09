@@ -1,91 +1,220 @@
-// ข้อมูลผลงานแถบแรก: MDT มี 10 งาน
+
+/* MDT มี 10 */
 var work1 = [
-    {name: "Assignment 1", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment1/"},
-    {name: "Assignment 2", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment2/"},
-    {name: "Assignment 3", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment3/"},
-    {name: "Assignment 4", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment4/"},
-    {name: "Assignment 5", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment5/"},
-    {name: "Assignment 6", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment6/register.html"},
-    {name: "Assignment 7", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment7/"},
-    {name: "Assignment 8", description: "$4.00", image: "", link: "https://athxcha.github.io/Portfolio/Assignment8/"},
-    {name: "Assignment 9", description: "$4.00", image: "", link: "https://github.com/athxcha/Portfolio/tree/main/Assignment9"},
-    {name: "Assignment 10", description: "$4.00", image: "",link: "https://athxcha.github.io/Portfolio/Assignment10/"}
+    {
+        name: "Assignment 1",
+        description: "Portfolio web page using only HTML",
+        image: "pic/a1.png",
+        link: "https://athxcha.github.io/Portfolio/Assignment1/"
+    },
+    {
+        name: "Assignment 2",
+        description: "Portfolio web page using External CSS",
+        image: "pic/a2.png",
+        link: "https://athxcha.github.io/Portfolio/Assignment2/"
+    },
+    {
+        name: "Assignment 3",
+        description: "Cinnamon Roll Wreath with Apples",
+        image: "pic/a3.png",
+        link: "https://athxcha.github.io/Portfolio/Assignment3/"
+    },
+    {
+        name: "Assignment 4",
+        description: "Recipe Pizza Dip",
+        image: "pic/a4.png",
+        link: "https://athxcha.github.io/Portfolio/Assignment4/"
+    },
+    {
+        name: "Assignment 5",
+        description: "Blogger",
+        image: "pic/a5.png",
+        link: "https://athxcha.github.io/Portfolio/Assignment5/"
+    },
+    {
+        name: "Assignment 6",
+        description: "Register and Login",
+        image: "pic/a6.png",
+        link: "https://athxcha.github.io/Portfolio/Assignment6/register.html"
+    },
+    {
+        name: "Assignment 7",
+        description: "Square game",
+        image: "pic/a7.png",
+        link: "https://athxcha.github.io/Portfolio/Assignment7/"
+    },
+    {
+        name: "Assignment 8",
+        description: "Selling Cloth",
+        image: "pic/a8.png",
+        link: "https://athxcha.github.io/Portfolio/Assignment8/"
+    },
+    {
+        name: "Assignment 9",
+        description: "Introduction to Node.js",
+        image: "pic/a9.png",
+        link: "https://github.com/athxcha/Portfolio/tree/main/Assignment9"
+    },
+    {
+        name: "Assignment 10",
+        description: "Chatroom",
+        image: "pic/a10.png",
+        link: "https://athxcha.github.io/Portfolio/Assignment10/"
+    }
 ];
 
-// ข้อมูลผลงานแถบที่สอง: Game มี 5 งาน
+
+/* Game มี 6 */
 var work2 = [
-    {name: "Homelomera Rubescens", description: "$4.00", image: "", link: ""},
-    {name: "Licuala Grandis", description: "$4.00", image: "", link: ""},
-    {name: "Fiddle Leaf Fig", description: "$4.00", image: "", link: ""},
-    {name: "Homelomera Rubescens", description: "$4.00", image: "", link: ""},
-    {name: "Licuala Grandis", description: "$4.00", image: "", link: ""}
+    {
+        name: "Paw Rumble",
+        description: "Final Projectวิชา GDM120 เป็นบอร์ดเกมแนว Party Battle ที่ผสมการแข่งขัน การวางแผน และดวง ผู้เล่นเดินบนแผนที่เพื่อพบอีเวนต์ เก็บไอเทม และต่อสู้กันด้วยการ์ดเป่ายิ้งฉุบ โดยผู้เล่นคนสุดท้ายที่รอดจะเป็นผู้ชนะ รับผิดชอบด้านออกแบบคอนเซปต์เกม Core Gameplay ปรับสมดุลการ์ดและไอเทม รวมถึงออกแบบการ์ดและปกเกม",
+        image: "pic/Paw.png",
+        link: ""
+    },
+    {
+        name: "Outpost",
+        description: "Final Project วิชา MDT211 เกมแนว FPS Base Defense ที่ผู้เล่นต้องป้องกันฐานจากศัตรูที่บุกเข้ามา รับผิดชอบด้านระบบ Item Use และมีส่วนช่วยพัฒนา Save System, Scriptable Object สำหรับควบคุม Enemy Wave และอาวุธ รวมถึงทดสอบและปรับสมดุลระบบต่าง ๆ ภายในเกม",
+        image: "pic/out.png",
+        link: ""
+    },
+    {
+        name: "Deep Ocean",
+        description: "Interactive Game ที่นำเสนอเรื่องราวเกี่ยวกับโรคกลัวน้ำลึก (Thalassophobia) ผ่านการสวมบทบาทเป็นนักประดาน้ำที่ดำดิ่งสู่ใต้ทะเลและเผชิญหน้ากับความกลัวในสิ่งที่ไม่รู้จัก โดยรับผิดชอบด้านการออกแบบคอนเซปต์ เนื้อเรื่อง ระบบการเล่น และพัฒนาเกมด้วย Unity รวมถึงพัฒนาฮาร์ดแวร์ด้วย Arduino, Ultrasonic Sensor และ Vibration Sensor",
+        image: "pic/DeepOcean.png",
+        link: ""
+    },
+    {
+        name: "Jelly Survivors",
+        description: "ออกแบบและพัฒนาเกม Jelly Survivors ในวิชา GDM221 และ GDM222 เป็นเกมแนว Survival ที่ผู้เล่นต้องเอาชีวิตรอดจากศัตรูที่บุกเข้ามาเป็น Wave เก็บ EXP เพื่อเพิ่มเลเวลและเลือกอัปเกรดความสามารถ พร้อมรับมือกับความยากและ Boss ที่เพิ่มขึ้น โดยเป็นโปรเจกต์เดี่ยวจึงรับผิดชอบตั้งแต่การออกแบบคอนเซปต์ ระบบการเล่น ระบบอัปเกรด อาวุธ ศัตรู การปรับสมดุล ไปจนถึงการพัฒนาและทดสอบเกมด้วย Unity",
+        image: "pic/JellPar.png",
+        link: ""
+    },
+    {
+        name: "Dead Decline",
+        description: "Dead Decline เป็นเกม First-Person Survival Horror Roguelike ที่ผู้เล่นรับบทเป็น Jessica ซึ่งตื่นขึ้นมาในโรงพยาบาล 10 ชั้นที่เต็มไปด้วยผู้ติดเชื้อ เป้าหมายคือเอาชีวิตรอดและหาทางลงจากชั้น 10 เพื่อหลบหนี โดยต้องต่อสู้ หลบซ่อน จัดการทรัพยากร อาวุธ และค่าการติดเชื้อ พร้อมค้นหาเบาะแสเพื่อเปิดเผยความจริงและนำไปสู่ตอนจบที่แตกต่างกัน 4 แบบ",
+        image: "pic/Dead.png",
+        link: ""
+    },
+    {
+        name: "Deap Sea",
+        description: "เกมสำรวจโลกใต้ทะเลที่ผู้เล่นควบคุมยานดำน้ำเพื่อค้นหาและสแกนสิ่งมีชีวิตต่าง ๆ โดยใช้ Gyroscope Sensor ในการตรวจจับการเอียงและการเคลื่อนไหวของอุปกรณ์เพื่อควบคุมทิศทางของยาน ผู้เล่นจะได้รับคะแนนจากการสำรวจและการสแกน พร้อมตอบคำถามเกี่ยวกับสิ่งมีชีวิตที่พบเพื่อเพิ่มคะแนน",
+        image: "pic/DeepSea.png",
+        link: ""
+    }
 ];
 
-// ข้อมูลผลงานแถบที่สาม: 3D มี 3 งาน
+
+/* 3D มี 3 */
 var work3 = [
-    {name: "Homelomera Rubescens", description: "$4.00", image: "", link: ""},
-    {name: "Licuala Grandis", description: "$4.00", image: "", link: ""},
-    {name: "Fiddle Leaf Fig", description: "$4.00", image: "", link: ""}
+    {
+        name: "Art toy",
+        image: "pic/Arttoy.png",
+        link: ""
+    },
+    {
+        name: "Room",
+        image: "pic/Room.png",
+        link: ""
+    },
+    {
+        name: "Pokemon",
+        image: "pic/Pokemon.png",
+        link: ""
+    }
 ];
 
-// ข้อมูลผลงานแถบที่สี่: Activity มี 4 งาน
+
+/* Animation มี 2 */
 var work4 = [
-    {name: "Homelomera Rubescens", description: "$4.00", image: "", link: ""},
-    {name: "Licuala Grandis", description: "$4.00", image: "", link: ""},
-    {name: "Fiddle Leaf Fig", description: "$4.00", image: "", link: ""},
-    {name: "Homelomera Rubescens", description: "$4.00", image: "", link: ""}
+    {
+        name: "2D Animation",
+        description: "FMV บ้านผีปลอบ Tactoo Color",
+        image: "pic/2d.png",
+        link: "https://youtu.be/oCEXOT4nI-A"
+    },
+    {
+        name: "3D Animation",
+        description: "Merida จาก Brave",
+        image: "pic/3d.png",
+        link: "https://youtu.be/y-T_DJfKdG0"
+    }
 ];
+
+
+/* Activity มี 3 */
+var work5 = [
+    {
+        name: "ค่าย I-Dia Camp ครั้งที่ 13",
+        description: "ตำแหน่ง ประธานค่าย / เหรัญญิก",
+        image: "pic/idia.png"
+    },
+    {
+        name: "สโมสรนักศึกษาโครงการร่วมบริหารหลักสูตร ฯ",
+        description: "ตำแหน่ง เหรัญญิก",
+        image: "pic/smo.png"
+    },
+    {
+        name: "กิจกรรม MDT Conect",
+        description: "ตำแหน่ง รองประธานกิจกรรม",
+        image: "pic/conect.png"
+    }
+];
+
 
 var linkText = "View Work →";
 
 window.onload = pageLoad;
 
+
 function pageLoad() {
+
     document.getElementById("tab1").onclick = showFirstTab;
     document.getElementById("tab2").onclick = showSecondTab;
     document.getElementById("tab3").onclick = showThirdTab;
     document.getElementById("tab4").onclick = showFourthTab;
-
-    // เลข PIC ท้ายหน้านับต่อจากจำนวนงานทั้งหมด
-    var nextPicture =
-        4 + work1.length + work2.length + work3.length + work4.length;
-
-    document.getElementById("footer-pic1").textContent =
-        "PIC " + nextPicture;
-
-    document.getElementById("footer-pic2").textContent =
-        "PIC " + (nextPicture + 1);
+    document.getElementById("tab5").onclick = showFifthTab;
 
     showFirstTab();
+
+    /* Popup รูปภาพ */
+    var openPhoto = document.getElementById("openPhoto");
+    var photoPopup = document.getElementById("photoPopup");
+    var closePhoto = document.getElementById("closePhoto");
+
+    openPhoto.onclick = function() {
+        photoPopup.style.display = "flex";
+    };
+
+    closePhoto.onclick = function() {
+        photoPopup.style.display = "none";
+    };
 }
 
+
 function showFirstTab() {
-    showWorks(work1, 4, true, "tab1");
+    showWorks(work1, true, "tab1");
 }
 
 function showSecondTab() {
-    showWorks(work2, 4 + work1.length, false, "tab2");
+    showWorks(work2, false, "tab2");
 }
 
 function showThirdTab() {
-    showWorks(
-        work3,
-        4 + work1.length + work2.length,
-        false,
-        "tab3"
-    );
+    showWorks(work3, false, "tab3");
 }
 
 function showFourthTab() {
-    showWorks(
-        work4,
-        4 + work1.length + work2.length + work3.length,
-        false,
-        "tab4"
-    );
+    showWorks(work4, false, "tab4");
 }
 
-function showWorks(works, firstPic, showLink, tabId) {
+function showFifthTab() {
+    showWorks(work5, false, "tab5");
+}
+
+
+function showWorks(works, showLink, tabId) {
+
     var workList = document.getElementById("work-list");
 
     workList.innerHTML = "";
@@ -94,21 +223,21 @@ function showWorks(works, firstPic, showLink, tabId) {
     document.getElementById("tab2").classList.remove("active");
     document.getElementById("tab3").classList.remove("active");
     document.getElementById("tab4").classList.remove("active");
+    document.getElementById("tab5").classList.remove("active");
 
     document.getElementById(tabId).classList.add("active");
 
     for (var i = 0; i < works.length; i++) {
+
         var card = document.createElement("div");
         card.className = "work-card";
 
         var picture = document.createElement("div");
         picture.className = "picture";
 
-        if (works[i].image == "") {
-            picture.textContent = "PIC " + (firstPic + i);
-        } else {
-            var img = document.createElement("img");
+        if (works[i].image != "") {
 
+            var img = document.createElement("img");
             img.src = works[i].image;
             img.alt = works[i].name;
 
@@ -120,16 +249,20 @@ function showWorks(works, firstPic, showLink, tabId) {
 
         var description = document.createElement("p");
         description.className = "work-description";
-        description.textContent = works[i].description;
+
+        if (works[i].description != undefined) {
+            description.textContent = works[i].description;
+        } else {
+            description.textContent = "";
+        }
 
         card.appendChild(picture);
         card.appendChild(title);
         card.appendChild(description);
 
-        // ปุ่มลิงก์แสดงเฉพาะ MDT
-        if (showLink == true) {
-            var link = document.createElement("a");
+        if (showLink == true && works[i].link != "") {
 
+            var link = document.createElement("a");
             link.className = "work-link";
             link.href = works[i].link;
             link.textContent = linkText;

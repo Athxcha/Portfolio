@@ -1,0 +1,102 @@
+/* This is a comment.
+    It can span many lines in a CSS file. */
+
+h1{
+    background-color: lightblue;
+    color: blue;
+}
+img{
+    width: 10%;
+}
+
+/* Font-size */
+ul{
+    font-family: Garamond, 'Times New Roman', Times, serif;
+    font-size: 20pt;
+    /* font-weight: bold;
+    font-style: italic; */
+    /* center block */
+    /* width: 200px;
+    margin: auto; */
+}
+
+/* Grouping styles */
+/* h1, h2{
+    background-color: lightblue;
+    color: blue;
+    font-family: Garamond, 'Times New Roman', Times, serif;
+} */
+
+/* h2{
+    color:red;
+    background-color: yellow;
+} */
+
+/* Text-align */
+div{
+    text-align: center;
+}
+
+/* Text-decoration */
+th{
+    text-decoration: underline;
+    /* text-shadow: -1px 4px gray; */
+}
+
+/* Css: width and height */
+/* img{
+    width: 50%;
+} */
+/* hr{
+    height: 30px;
+    color: turquoise;
+    background-color: turquoise;
+    border: none;
+} */
+
+/* id and class */
+#pokemon_pic{
+    width: 25%;
+}
+
+.left_page{
+    text-align: left;
+}
+
+/* context selectors */
+div a{
+    font-size: 30px;
+    font-weight: bold;
+    color: blue;
+}
+
+/*  Tables Styling */
+/* table {
+    border-collapse: collapse;
+    width: 90%;
+    max-width: 500px;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    border-radius: 12px;
+}
+
+th, td {
+    text-align: center;
+}
+
+th {
+    background-color: #0a285f;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: underline; 
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+td {
+    border-bottom: 1px solid #f0f4f8;
+    color: #4a5568;
+    font-size: 15px;
+}
+.table_Border {
+    border: 3px solid #ffde00;} */

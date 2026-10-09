@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socket.IO Broadcast Playground</title>
+  <!-- แยกไฟล์ CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- โหลด Socket.IO Client Library จาก Server -->
+  <script src="/socket.io/socket.io.js"></script>
+  <!-- แยกไฟล์ JavaScript -->
+  <script src="script.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>📡 Socket.IO Broadcast Playground</h1>
+      <div>
+        <span class="status-badge" id="clientStatus">กำลังเชื่อมต่อ...</span>
+        <span class="status-badge" id="roomStatus">ห้องปัจจุบัน: ยังไม่ได้เข้าห้อง</span>
+      </div>
+    </header>
+
+    <!-- สรุปทฤษฎี & ฟังก์ชันหลัก -->
+    <div class="cheatsheet">
+      <h2>📘 สรุปการทำงานของ Socket.IO</h2>
+      <ul>
+        <li>🔹 <code>socket.emit('event', data)</code>: <b>ส่งข้อมูล</b>ไประบุชื่อ Event และ Data</li>
+        <li>🔹 <code>socket.on('event', callback)</code>: <b>รอรับฟัง</b> เมื่อมีสัญญาณ Event ตรงกันจะทำงาน</li>
+        <li>🔸 <code>socket.emit(...)</code>: ส่งกลับหาคนส่งคนเดียว (Only Me)</li>
+        <li>🔸 <code>socket.broadcast.emit(...)</code>: ส่งหาทุกคน ยกเว้น ตัวเอง (Broadcast)</li>
+        <li>🔸 <code>io.emit(...)</code>: ส่งหาทุกคนในระบบ รวมทั้ง ตัวเอง (To All)</li>
+        <li>🔸 <code>io.to('room-id').emit(...)</code>: ส่งหาเฉพาะคนที่อยู่ในห้องนั้นๆ (To Room)</li>
+      </ul>
+    </div>
+
+    <!-- ส่วนทดสอบการส่งข้อความ -->
+    <div class="card">
+      <h3>✉️ กล่องทดสอบส่งข้อมูล</h3>
+      <div class="input-group">
+        <input type="text" id="messageInput" placeholder="พิมพ์ข้อความที่ต้องการส่ง เช่น สวัสดี Socket.IO" value="Hello Socket!">
+      </div>
+
+      <div class="btn-grid">
+        <!-- 1. socket.emit -->
+        <button id="btnOnlyMe" class="btn-emit">
+          1. socket.emit(...)
+          <span>ส่งกลับมาหาฉันคนเดียว</span>
+        </button>
+
+        <!-- 2. socket.broadcast.emit -->
+        <button id="btnBroadcast" class="btn-broadcast">
+          2. socket.broadcast.emit(...)
+          <span>ส่งหาทุกคน ยกเว้นฉัน</span>
+        </button>
+
+        <!-- 3. io.emit -->
+        <button id="btnToAll" class="btn-all">
+          3. io.emit(...)
+          <span>ส่งหาทุกคน รวมตัวฉันด้วย</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ส่วนทดสอบ Room -->
+    <div class="card">
+      <h3>🚪 ทดสอบระบบห้อง (io.to('room-id').emit)</h3>
+      <div class="room-bar">
+        <label for="roomSelect"><b>เลือกห้อง:</b></label>
+        <select id="roomSelect">
+          <option value="Room-A">Room A (กลุ่ม A)</option>
+          <option value="Room-B">Room B (กลุ่ม B)</option>
+          <option value="Game-Lobby">Game Lobby</option>
+        </select>
+        <button id="btnJoinRoom" class="btn-action" style="padding: 10px 16px;">เข้าห้องนี้</button>
+      </div>
+
+      <div class="btn-grid">
+        <button id="btnToRoom" class="btn-room">
+          4. io.to('room-id').emit(...)
+          <span>ส่งข้อความเฉพาะคนในห้องที่เลือก</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ส่วนแสดงประวัติข้อความที่ได้รับ -->
+    <div class="card">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <h3>📬 ข้อความที่ได้รับ (socket.on)</h3>
+        <button id="btnClearLogs" class="btn-action" style="padding: 4px 10px; font-size:12px;">ล้างข้อความ</button>
+      </div>
+      <div class="log-panel" id="logPanel">
+        <div style="color:#9ca3af; text-align:center; margin-top:120px;">ยังไม่มีข้อความ (ลองเปิดหลายหน้าต่างแล้วกดส่งดูครับ)</div>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>

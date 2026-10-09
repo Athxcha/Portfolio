@@ -1,0 +1,21 @@
+img{
+    width: 30%;
+}
+
+div .class1{
+    border: 2px solid magenta;
+    margin: auto;
+    width: 50%;
+    height: 100px;
+}
+p{
+    border: 2px solid rgb(6, 58, 23);
+    margin: auto;
+    width: 30%;
+    height: 100px;
+}
+@media only screen and (max-width: 767px){
+    .class1{
+        border: 2px solid blue;
+    }
+}
